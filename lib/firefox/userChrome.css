@@ -1,0 +1,42 @@
+/* Remove back button circle */
+#back-button:not(:hover),
+#back-button:not(:hover) > .toolbarbutton-icon {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+#back-button:hover,
+#back-button:hover > .toolbarbutton-icon {
+    border: none !important;
+    border-radius: 2px !important;
+}
+
+/* Round the corners of the search bar, like chrome */
+#urlbar, .searchbar-textbox {
+    border-radius: 2em !important;
+}
+#urlbar-input-container {
+   padding: 0 9px 0 6px !important;
+}
+#tracking-protection-icon-container {
+    margin-left: -6px !important;
+    border-radius: 2em 3px 3px 2em !important;
+    width: 36px !important;
+    padding-left: 8px !important;
+}
+#tracking-protection-icon-box {
+    padding-left: 4px !important;
+    width: 21px !important;
+}
+#pageActionButton {
+    margin-right: -9px !important;
+    width: 36px !important;
+    padding-right: 8px !important;
+    border-radius: 3px 2em 2em 3px !important;
+}
+
+/* Make the corners of buttons not quite as sharp */
+:root {
+    --toolbarbutton-border-radius: 3px !important;
+}
+
