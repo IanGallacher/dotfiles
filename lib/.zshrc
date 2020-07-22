@@ -4,6 +4,8 @@ setopt correct
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/thedoctor/.oh-my-zsh"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
