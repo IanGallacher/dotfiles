@@ -1,0 +1,7 @@
+The ultimate issue was that there was a udev rule disabling hdmi audio.
+
+Useful commands:
+aplay -D plughw:1,3 /usr/share/sounds/alsa/Front_Right.wav
+Outputs sound on the selected device. 1,3 means card 1 device 3. use `aplay -l` to figure out which device to use.
+
+

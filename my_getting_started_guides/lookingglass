@@ -1,0 +1,3 @@
+download the deb driver from look.glass/start
+double click to install it
+run it with sudo (make sure optimus-manager is set to nvidia)
