@@ -100,8 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-powerline-daemon -q
-. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ######################### CUSTOM ALIASES #################################
@@ -117,3 +115,9 @@ setopt HIST_IGNORE_SPACE
 find_files_with_contents() { grep -iRl $1 ./ }
 alias colorpicker="gcolor2"
 alias ls="ls -a --color=tty"
+alias checkports="sudo lsof -i -P -n | grep LISTEN"
+alias checkports2="sudo ss -tulwn"
+# Case sensitive search in less is annoying, let's turn it off
+alias less="less -i"
+
+PATH=~/Github/dotfiles/scripts:$PATH

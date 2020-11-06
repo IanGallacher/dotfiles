@@ -45,18 +45,21 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+# exec --no-startup-id volumeicon
+# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+exec --no-startup-id pasystray
+bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "light -A 10; light -G | xargs dunstify -r 666123 'current brightness: '"
-# exec "notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "light -U 10; light -G | xargs dunstify -r 666123 'current brightness: '"
+
+# Volume Controls
+bindsym XF86AudioRaiseVolume exec "~/Github/dotfiles/scripts/changeVolume 1% up"
+bindsym XF86AudioLowerVolume exec "~/Github/dotfiles/scripts/changeVolume 1% down"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'

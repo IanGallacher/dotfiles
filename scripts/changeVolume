@@ -1,0 +1,33 @@
+#!/bin/bash
+# changeVolume <PERCENT (0-100)> <DIRECTION (up|down)>
+# For instance:
+# $ changeVolume 1 up
+
+# Arguments
+PERCENT=$(echo "$1" | sed "s/%$//") # Amount to change the volume by.
+DIRECTION="$2" # Increase or decrease the volume.
+
+# Constants
+ICON_PATH="/usr/share/icons/Papirus-Dark/symbolic/status"
+VOLUME_ICON="${ICON_PATH}/audio-volume-high-symbolic.svg"
+
+case $DIRECTION in
+    "up")
+        amixer -q -D pulse set Master "${PERCENT}%+" unmute
+	;;
+    "down")
+        amixer -q -D pulse set Master "${PERCENT}%-" unmute
+	;;
+esac
+
+VOLUME_PERCENT="$(amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1)"
+
+# Send notification
+dunstify -i $VOLUME_ICON -r 2593 -u normal "$VOLUME_PERCENT%"
+
+# With progress bar:
+# dunstify -i $VOLUME_ICON -r 2593 -u normal "$VOLUME_PERCENT% $(progressBarString $VOLUME_PERCENT)"
+
+# Play volume change sound
+canberra-gtk-play -i audio-volume-change -d changeVolume
+

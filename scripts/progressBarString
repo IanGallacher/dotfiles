@@ -1,0 +1,17 @@
+#!/bin/bash
+# progressBarString <PERCENT (0-100)>
+# Example:
+# $ progressBarString 20
+# Output:
+# ──
+
+# Shoutout to https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
+# This script was inspired by it.
+
+# Arguments
+ITEMS="$1" # Amount to change the volume by.
+COUNT=$(($ITEMS / 5))
+SPACE=$(((100 - $ITEMS) / 5))
+
+echo $(printf "%${COUNT}s" | sed "s/ /█/g")$(printf "%${SPACE}s" | sed "s/ /▁/g")
+
