@@ -78,6 +78,9 @@ bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
+mouse_warping none
+
+
 
 # change focus
 bindsym $mod+j focus left
