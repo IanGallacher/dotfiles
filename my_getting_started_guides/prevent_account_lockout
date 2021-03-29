@@ -1,0 +1,3 @@
+vi /etc/security/faillock.conf
+change `deny=3` to `deny=30`, make sure its uncommented.
+
