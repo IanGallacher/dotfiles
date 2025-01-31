@@ -151,7 +151,7 @@ set $ws1 1:1-Firefox
 set $ws2 2:2-Terminal
 set $ws3 3:3-Unity
 set $ws4 4:4
-set $ws5 5:5-Blender
+set $ws5 5:5-VideoEditor
 set $ws6 6:6-Filesystem
 set $ws7 7:7-Discord
 set $ws8 8:8-Games
