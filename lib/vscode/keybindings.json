@@ -1,0 +1,23 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditorInGroup",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditorInGroup",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execInREPL",
+    "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !accessibilityModeEnabled && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python' && activeEditor != 'workbench.editor.interactive'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python' && activeEditor != 'workbench.editor.interactive'"
+  }
+]
